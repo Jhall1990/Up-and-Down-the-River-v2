@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginEnd="8dp" >
+
+    <TextView
+        android:id="@+id/nameTextId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:paddingTop="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="26sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/tricksTakenMinusButtonId"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:text="@string/minus_button"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@id/editTextNumber" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="2"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:theme="@style/Theme.AppCompat.Light"
+        app:layout_constraintEnd_toStartOf="@id/tricksTakenPlusButtonId" />
+
+    <Button
+        android:id="@+id/tricksTakenPlusButtonId"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_plus"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
