@@ -236,7 +236,7 @@ public class Game implements java.io.Serializable {
                 break;
         }
 
-        if (trumpMode == Constants.TRUMP_MODE.CLASSIC) {
+        if (trumpMode == Constants.TRUMP_MODE.CLASSIC || trumpMode == Constants.TRUMP_MODE.RANDOM) {
             generateTrump();
         }
 
