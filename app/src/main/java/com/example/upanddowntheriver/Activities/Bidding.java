@@ -8,14 +8,17 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.upanddowntheriver.Backend.BiddingRecyclerAdapter;
+import com.example.upanddowntheriver.Backend.Constants;
 import com.example.upanddowntheriver.Backend.Game;
 import com.example.upanddowntheriver.Backend.GamePlayer;
 import com.example.upanddowntheriver.Backend.SimpleDividerItemDecoration;
+import com.example.upanddowntheriver.Backend.Speak;
 import com.example.upanddowntheriver.Backend.Utils;
 import com.example.upanddowntheriver.R;
 
@@ -97,6 +100,21 @@ public class Bidding extends AppCompatActivity {
         updateUI();
     }
 
+    public void whatTrumpBe(View view) {
+        // Say what trump is currently set to, unless it's not set
+        // then remind the user it hasn't been set.
+        Constants.SUIT curTrump = game.getCurTrump();
+        String toSay = "";
+
+        if (curTrump == Constants.SUIT.NONE) {
+            toSay = "Set trump first";
+        } else {
+            toSay = "Trump is " + curTrump.name();
+        }
+
+        Speak.say(toSay);
+    }
+
     public void previousBidder(View view) {
         if (doneBidding) {
             doneBidding = false;
@@ -156,6 +174,10 @@ public class Bidding extends AppCompatActivity {
             nextButton.setText(R.string.next_button_text);
             dealerBidText.setText("");
             Utils.enableButton(nextButton, getResources().getColor(R.color.teal_700, getTheme()));
+        }
+
+        if (!doneBidding) {
+            Speak.say(game.getPlayer(playerIndex).getNickName());
         }
     }
 

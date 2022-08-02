@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Jacob/StudioProjects/Up-and-Down-the-River-v2/app/src/main/res/layout/activity_add_edit_players.xml" value="0.3625" />
+        <entry key="..\:/Users/Jacob/StudioProjects/Up-and-Down-the-River-v2/app/src/main/res/layout/activity_after_bidding.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/Jacob/StudioProjects/Up-and-Down-the-River-v2/app/src/main/res/layout/activity_bidding.xml" value="0.3625" />
+        <entry key="..\:/Users/Jacob/StudioProjects/Up-and-Down-the-River-v2/app/src/main/res/layout/activity_game_start.xml" value="0.3625" />
+        <entry key="..\:/Users/Jacob/StudioProjects/Up-and-Down-the-River-v2/app/src/main/res/layout/activity_main.xml" value="0.13269927536231885" />
+        <entry key="..\:/Users/Jacob/StudioProjects/Up-and-Down-the-River-v2/app/src/main/res/layout/activity_scoreboard.xml" value="0.3625" />
+      </map>
+    </option>
+  </component>
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="org.jetbrains.annotations.Nullable" />
     <option name="myDefaultNotNull" value="androidx.annotation.NonNull" />
@@ -43,7 +55,7 @@
       </value>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

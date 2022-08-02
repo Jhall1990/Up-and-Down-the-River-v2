@@ -8,7 +8,7 @@ import android.widget.Button;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Utils {
+public final class Utils {
     public static void enableButton(Button button, int color) {
         button.setEnabled(true);
         button.setBackgroundColor(color);

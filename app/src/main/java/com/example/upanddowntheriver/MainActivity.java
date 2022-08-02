@@ -11,6 +11,8 @@ import com.example.upanddowntheriver.Activities.AddPlayer;
 import com.example.upanddowntheriver.Activities.SelectPlayers;
 import com.example.upanddowntheriver.Activities.PreviousGames;
 import com.example.upanddowntheriver.Activities.Stats;
+import com.example.upanddowntheriver.Backend.Speak;
+import com.example.upanddowntheriver.Backend.Utils;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -48,5 +50,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Speak speak = Speak.getInstance();
+        speak.InitTTS(getApplicationContext());
     }
 }

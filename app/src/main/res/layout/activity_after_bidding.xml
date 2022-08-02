@@ -115,6 +115,14 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
+            android:id="@+id/afterBitWhatTrumpButonId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="whatTrumpBe"
+            android:text="@string/what_is_trump_text" />
+
+        <Button
             android:id="@+id/afterBidShowBidsButtonId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

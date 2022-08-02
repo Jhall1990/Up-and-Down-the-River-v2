@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.upanddowntheriver.Backend.Constants;
 import com.example.upanddowntheriver.Backend.Game;
+import com.example.upanddowntheriver.Backend.Speak;
 import com.example.upanddowntheriver.Backend.Utils;
 import com.example.upanddowntheriver.R;
 
@@ -39,6 +40,21 @@ public class AfterBidding extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
+    }
+
+    public void whatTrumpBe(View view) {
+        // Say what trump is currently set to, unless it's not set
+        // then remind the user it hasn't been set.
+        Constants.SUIT curTrump = game.getCurTrump();
+        String toSay = "";
+
+        if (curTrump == Constants.SUIT.NONE) {
+            toSay = "Set trump first";
+        } else {
+            toSay = "Trump is " + curTrump.name();
+        }
+
+        Speak.say(toSay);
     }
 
     @Override

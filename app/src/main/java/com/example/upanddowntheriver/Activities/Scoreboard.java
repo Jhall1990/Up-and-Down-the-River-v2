@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.upanddowntheriver.Backend.Game;
 import com.example.upanddowntheriver.Backend.GamePlayer;
+import com.example.upanddowntheriver.Backend.Speak;
 import com.example.upanddowntheriver.Backend.Utils;
 import com.example.upanddowntheriver.R;
 
@@ -114,6 +116,28 @@ public class Scoreboard extends AppCompatActivity {
             text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         }
         return text;
+    }
+
+    public void recapScores(View view) {
+        ArrayList<GamePlayer> players = game.getPlayersInScoreOrder();
+        Speak speak = Speak.getInstance();
+        TextToSpeech tts = speak.getTTS();
+
+        for (GamePlayer player: players) {
+            Speak.say(player.getNickName() + " with " + player.getScore());
+
+            try {
+                Thread.sleep(250);
+            }
+            catch (InterruptedException e) {
+                // stupid java, just let me not handle the exception
+            }
+
+            // Wait for tts to stop speaking
+            while (tts.isSpeaking()) {
+                // waiting for tts to stop speaking
+            }
+        }
     }
 
     @Override

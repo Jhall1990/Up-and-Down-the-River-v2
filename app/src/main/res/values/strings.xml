@@ -51,4 +51,7 @@
     <string name="stats_text">Player Stats</string>
     <string name="clear_all_text">Clear All</string>
     <string name="clear_games_text">Clear Games</string>
+    <string name="recap_button_text">Recap</string>
+    <string name="what_is_trump_text">What\'s Trump?</string>
+    <string name="test_nick_name_button_text">Test Nick Name</string>
 </resources>

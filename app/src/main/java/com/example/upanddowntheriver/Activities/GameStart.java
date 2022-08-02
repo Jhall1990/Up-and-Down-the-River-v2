@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.upanddowntheriver.Backend.Constants;
 import com.example.upanddowntheriver.Backend.Game;
+import com.example.upanddowntheriver.Backend.Speak;
 import com.example.upanddowntheriver.Backend.Utils;
 import com.example.upanddowntheriver.R;
 
@@ -21,6 +22,21 @@ public class GameStart extends AppCompatActivity {
     Game game;
     Button startBiddingButton;
     ImageView trumpImage;
+
+    public void whatTrumpBe(View view) {
+        // Say what trump is currently set to, unless it's not set
+        // then remind the user it hasn't been set.
+        Constants.SUIT curTrump = game.getCurTrump();
+        String toSay = "";
+
+        if (curTrump == null) {
+            toSay = "Trump hasn't been set yet";
+        } else {
+            toSay = "Trump is " + curTrump.name();
+        }
+
+        Speak.say(toSay);
+    }
 
     public void showScores(View view) {
         Intent intent = Utils.createIntentWithData(this, Scoreboard.class, "game", game);

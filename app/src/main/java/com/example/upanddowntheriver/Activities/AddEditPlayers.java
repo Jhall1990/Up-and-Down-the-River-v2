@@ -8,11 +8,11 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.example.upanddowntheriver.Backend.Constants;
 import com.example.upanddowntheriver.Backend.Player;
 import com.example.upanddowntheriver.Backend.PlayerCollection;
+import com.example.upanddowntheriver.Backend.Speak;
 import com.example.upanddowntheriver.R;
 
 // TODO Figure out if nick name should be re-enabled.
@@ -52,6 +52,12 @@ public class AddEditPlayers extends AppCompatActivity {
         }
     }
 
+    public void speakNickName(View view) {
+        EditText nickNameText = findViewById(R.id.playerNickNameTextId);
+        String nickName = nickNameText.getText().toString();
+        Speak.say(nickName);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,12 +68,7 @@ public class AddEditPlayers extends AppCompatActivity {
         int requestCode = intent.getIntExtra("requestCode", 1);
         players = (PlayerCollection) intent.getExtras().getSerializable("players");
 
-        // For now disable the nick name stuff.
-        TextView nickNameHeader = findViewById(R.id.playerNickNameHeaderTextId);
         EditText nickNameText = findViewById(R.id.playerNickNameTextId);
-        nickNameHeader.setVisibility(View.INVISIBLE);
-        nickNameText.setVisibility(View.INVISIBLE);
-
         EditText nameText = findViewById(R.id.playerNameTextId);
         nameText.requestFocus();
         nameText.setSelection(0);
